@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "djym77/laravel-actuator",
+    "description": "Actuator endpoints let you monitor and interact with your application.",
     "keywords": [
-        ":vendor_name",
+        "djym77",
         "laravel",
-        ":package_slug"
+        "laravel-actuator"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/djym77/laravel-actuator",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Jean-Yves Mousso",
+            "email": "djym77@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Djym77\\LaravelActuator\\": "src/",
+            "Djym77\\LaravelActuator\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "Djym77\\LaravelActuator\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Djym77\\LaravelActuator\\LaravelActuatorServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelActuator": "Djym77\\LaravelActuator\\Facades\\LaravelActuator"
             }
         }
     },
