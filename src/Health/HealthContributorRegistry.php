@@ -15,9 +15,6 @@ class HealthContributorRegistry
         $this->contributors[$name] = $class;
     }
 
-    /**
-     * @return Collection
-     */
     public function getAll(): Collection
     {
         return collect($this->contributors);

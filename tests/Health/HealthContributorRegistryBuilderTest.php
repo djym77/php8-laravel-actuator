@@ -2,11 +2,11 @@
 
 namespace Djym77\LaravelActuator\Tests\Health;
 
-use Illuminate\Foundation\Application;
 use Djym77\LaravelActuator\Health\HealthContributor;
 use Djym77\LaravelActuator\Health\HealthContributorRegistry;
 use Djym77\LaravelActuator\Health\HealthContributorRegistryBuilder;
 use Djym77\LaravelActuator\Health\StatusContributor;
+use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase;
 
 class HealthContributorRegistryBuilderTest extends TestCase

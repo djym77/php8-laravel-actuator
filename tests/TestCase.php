@@ -2,9 +2,9 @@
 
 namespace Djym77\LaravelActuator\Tests;
 
+use Djym77\LaravelActuator\LaravelActuatorServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Djym77\LaravelActuator\LaravelActuatorServiceProvider;
 
 class TestCase extends Orchestra
 {
