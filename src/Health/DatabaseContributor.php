@@ -14,6 +14,7 @@ class DatabaseContributor implements HealthContributor
      * @var Repository
      */
     private $config;
+
     /**
      * @var DatabaseManager
      */

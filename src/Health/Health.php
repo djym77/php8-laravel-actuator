@@ -7,5 +7,6 @@ namespace Djym77\LaravelActuator\Health;
 class Health
 {
     public $status;
+
     public $details = [];
 }

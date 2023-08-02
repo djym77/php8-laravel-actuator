@@ -2,12 +2,12 @@
 
 namespace Djym77\LaravelActuator\Tests\Health;
 
+use Djym77\LaravelActuator\Health\DatabaseContributor;
 use Exception;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\Connection;
 use Illuminate\Database\DatabaseManager;
 use Mockery;
-use Djym77\LaravelActuator\Health\DatabaseContributor;
 use Orchestra\Testbench\TestCase;
 use PDOException;
 
@@ -17,6 +17,7 @@ final class DatabaseContributorTest extends TestCase
      * @var Repository|Mockery\LegacyMockInterface|Mockery\MockInterface
      */
     private $config;
+
     /**
      * @var DatabaseManager|Mockery\LegacyMockInterface|Mockery\MockInterface
      */

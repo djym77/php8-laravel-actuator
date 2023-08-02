@@ -2,10 +2,10 @@
 
 namespace Djym77\LaravelActuator;
 
-use Illuminate\Support\ServiceProvider;
 use Djym77\LaravelActuator\Health\HealthBuilder;
 use Djym77\LaravelActuator\Health\HealthContributorRegistry;
 use Djym77\LaravelActuator\Health\HealthContributorRegistryBuilder;
+use Illuminate\Support\ServiceProvider;
 
 class LaravelActuatorServiceProvider extends ServiceProvider
 {
@@ -13,15 +13,15 @@ class LaravelActuatorServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/actuator.php' => config_path('actuator.php'),
+                __DIR__.'/../config/actuator.php' => config_path('actuator.php'),
             ], 'config');
         }
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/actuator.php', 'actuator');
+        $this->mergeConfigFrom(__DIR__.'/../config/actuator.php', 'actuator');
 
         $this->app->singleton(HealthContributorRegistry::class, static function () {
             return (new HealthContributorRegistryBuilder())->build();
