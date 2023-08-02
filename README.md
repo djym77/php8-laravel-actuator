@@ -20,7 +20,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require djym77/laravel-actuator
+composer require djym77/php8-laravel-actuator
 ```
 
 
