@@ -1,6 +1,6 @@
 <?php
 
-namespace Djym77\LaravelActuator\Health\HealthBuilder;
+namespace Djym77\LaravelActuator\Health;
 use Illuminate\Support\Facades\Route;
 
 /*

@@ -9,7 +9,7 @@ use Djym77\LaravelActuator\Health\StatusContributor;
 
 return [
     'health' => [
-        'show-details' => false,
+        'show-details' => true,
         'contributors' => [
             'status' => StatusContributor::class,
             'disk' => DiskSpaceContributor::class,

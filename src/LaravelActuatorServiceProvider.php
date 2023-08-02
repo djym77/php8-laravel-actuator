@@ -2,38 +2,32 @@
 
 namespace Djym77\LaravelActuator;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Illuminate\Support\ServiceProvider;
+use Djym77\LaravelActuator\Health\HealthBuilder;
+use Djym77\LaravelActuator\Health\HealthContributorRegistry;
+use Djym77\LaravelActuator\Health\HealthContributorRegistryBuilder;
 
-use Djym77\LaravelActuator\Commands\LaravelActuatorCommand;
-
-
-class LaravelActuatorServiceProvider extends PackageServiceProvider
+class LaravelActuatorServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function boot()
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-    
-            $package
-            ->name('laravel-actuator')
-            ->hasConfigFile()
-            ->hasRoute('web')
-            ->hasCommand(LaravelActuatorCommand::class)
-            ->hasInstallCommand(function(InstallCommand $command) {
-                $command
-                ->startWith(function(InstallCommand $command) {
-                    $command->info('Hello, and welcome to my great new package!');
-                })
-                    ->publishConfigFile()
-                    ->copyAndRegisterServiceProviderInApp()
-                    ->endWith(function(InstallCommand $command) {
-                        $command->info('Have a great day!');
-                    });
-            });
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/actuator.php' => config_path('actuator.php'),
+            ], 'config');
+        }
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+    }
+
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../config/actuator.php', 'actuator');
+
+        $this->app->singleton(HealthContributorRegistry::class, static function () {
+            return (new HealthContributorRegistryBuilder())->build();
+        });
+        $this->app->singleton(HealthBuilder::class, static function ($app) {
+            return new HealthBuilder($app[HealthContributorRegistry::class]);
+        });
     }
 }

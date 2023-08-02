@@ -37,21 +37,6 @@ return [
 ];
 ```
 
-
-
-## Usage
-
-```php
-$laravelActuator = new Djym77\LaravelActuator();
-echo $laravelActuator->echoPhrase('Hello, Djym77!');
-```
-
-## Testing
-
-```bash
-composer test
-```
-
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
