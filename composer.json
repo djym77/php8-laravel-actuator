@@ -67,7 +67,5 @@
                 "LaravelActuator": "Djym77\\LaravelActuator\\Facades\\LaravelActuator"
             }
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
